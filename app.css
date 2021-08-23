@@ -1,0 +1,29 @@
+body {
+    padding: 1rem;
+    text-align: center;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+#featuredAnime{
+  display: flex;
+  overflow-x: auto;
+  margin: 1rem 0;
+  max-width: calc(100vw - 2rem)
+}
+
+#featuredAnime img{
+    flex: 0 1 auto;
+    height: 300px;
+    margin-right: 0.5rem;
+    
+}
+#featuredAnime img:last-child {
+    margin-right: 0;
+  }
+
