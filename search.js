@@ -1,71 +1,125 @@
-//Roger's COde, Yet to be cleaned up lol
-function filterSearch() {
-    const formInput = document.querySelector('#animeSearch');
+const BASEURL ='https://api.aniapi.com/v1/anime'
 
+// -------- MAIN SEARCH FUNCTION --------//
+function filterSearch() {
+
+    const formInput = document.querySelector('#animeSearch');
+    const formDropDown = document.querySelector('#form-dropdown');
     formInput.addEventListener('submit', e => {
+
+        const animeInput = e.target.animeInput.value;
         e.preventDefault();
 
-        fetch(animeListURL)
-        .then(resp => resp.json())
-        .then(data => {
+        if(formDropDown.selectedIndex === 1){
+            filterTitle(animeInput);
+            formInput.reset();
+        } else if(formDropDown.selectedIndex === 2){
+            filterGenre(animeInput);
+            formInput.reset();
+        } else {
+            formInput.reset();
+            console.log('Please Specify Input Type!');
+        };
 
-            const animeArr = data.data.documents
-            const animeInput = e.target.animeInput.value.toUpperCase();
+    });
 
-            animeArr.filter(oneAnime => { 
-                const animeTitle = oneAnime.titles.en;
-                const animeId = oneAnime.id;
+};
 
-                if(animeTitle.substring(0, 3).toUpperCase() === animeInput.substring(0, 3)) {
-                    displaySearchResults(animeTitle, animeId);
-                    formInput.reset();
-                    } 
 
-                })
+// -------- SUB-SEARCH FUNCTIONS --------//
+function filterTitle(input) {
 
-            })
+    fetch(BASEURL)
+    .then(resp => resp.json())
+    .then(output => {
 
-        })
+        const animeArr = output.data.documents;
+        animeArr.filter(individualAnime => {
 
-}
+            const individualTitle = individualAnime.titles.en;
+            const individualId = individualAnime.id;
 
-function displaySearchResults(title, id) {
-    const displayDiv = document.querySelector('#searched-anime');
-    const newDiv = document.createElement('div');
-    const p = document.createElement('p');
+            if(individualTitle.substring(0, 3).toUpperCase() === input.substring(0, 3).toUpperCase() ||
+               individualTitle.substring(0, 2).toUpperCase() === input.substring(0, 2).toUpperCase() ||
+               individualTitle.substring(0, 1).toUpperCase() === input.substring(0, 1).toUpperCase() ||
+               individualTitle.toUpperCase() === input.toUpperCase()) {
+                   filterRender(individualTitle, individualId);
+               };
 
-    newDiv.classList = 'searched-container';
-    p.classList = id;
-    p.textContent = title;
- 
-    newDiv.appendChild(p)
-    displayDiv.appendChild(newDiv);
+        });
 
-    p.addEventListener('click', e => {
-        console.log(e)
+    });
+
+};
+
+function filterGenre(input) {
+
+    fetch(BASEURL)
+    .then(resp => resp.json())
+    .then(output => {
+
+        const animeArr = output.data.documents;
+        animeArr.filter(individualAnime => {
+
+            const individualAnimeGenres = individualAnime.genres;
+            const individualTitle = individualAnime.titles.en;
+            const individualId = individualAnime.id;
+
+            if(individualAnimeGenres.find(genre => genre.toUpperCase() === input.toUpperCase())) {
+                filterRender(individualTitle, individualId);
+            };
+
+        });
+
+    });
+
+};
+
+
+// -------- RENDERING SEARCH RESULTS FUNCTION --------// 
+function filterRender(title, id) {
+
+    const div = document.querySelector('#searched-anime');
+    const newImg = document.querySelector('.searched-container img');
+    const newTrailer = document.querySelector('#searched-anime a');
+    const genreHeader = document.querySelector('#genres');
+    const genreList = document.querySelector('#genre-list');
+    const p = document.querySelector('#search-description');
+
+    const h3 = document.createElement('h3');
+    h3.textContent = title;
+    div.appendChild(h3);
+
+    h3.addEventListener('click', () => {
         fetch(`https://api.aniapi.com/v1/anime/${id}`)
         .then(resp => resp.json())
         .then(obj => {
-            const searchImg = document.createElement('img');
-            const newP = document.createElement('p');
-            const a = document.createElement('a');
 
-            searchImg.src = obj.data['cover_image']
-            searchImg.classList = 'searched-image'
-            searchImg.id = obj.data.id;
-            newP.textContent = obj.data.descriptions.en;
-            a.classList = 'trailer-url';
-            a.textContent = 'TRAILER'; 
-            a.title = 'trailer';
-            a.href = obj.data['trailer_url']
+            newImg.src = obj.data['cover_image'];
+            newImg.classList = 'searched-image'
+            p.textContent = (obj.data.descriptions.en).replaceAll('<br>',"").replaceAll("</br>", "").replaceAll('</i>',"").replaceAll('<i>',"");
+            newTrailer.classList = 'trailer-url';
+            newTrailer.textContent = 'TRAILER';
+            newTrailer.title = 'trailer';
+            newTrailer.href = obj.data['trailer_url']
+            genreHeader.textContent = 'GENRES:';
+            const genreArr = obj.data.genres;
+            genreList.innerHTML = '';
 
-            newDiv.append(searchImg, newP, a);
-            console.log(obj)})
-    })
+            for(let i = 0; i < 5; i++) {
+                const li = document.createElement('li');
+                li.textContent = genreArr[i];
+                genreList.appendChild(li);
+            };
 
-}
+        });
+    });
 
-const formInputValue = document.querySelector('#animeInput');
-formInputValue.addEventListener('keydown', e => console.log(e.target.value))
+    const formInput = document.querySelector('#animeInput');
+    formInput.addEventListener('click', () => {
+        newDiv.remove();
+    });
+    
+}; 
 
 filterSearch();
