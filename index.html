@@ -1,24 +1,36 @@
 <html lang="en">
   <head>
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="app.css" />
     <script defer src="main.js"></script>
-    <title></title>
+    <title>Anime Database</title>
+
   </head>
   <body>
+    
     <header>Anime Lover</header>
-    <!-- Search bar -->
+
+    <!-- Search Bar -->
     <form id='animeSearch'>
-      <label for='animeName'>Search: </label>
-      <input type='text' name='animeName' id='newAnime' />
+      <label for='animeName'>Search By: </label>
+      <select>
+        <option value='genre'>Genre</option>
+        <option value='title'>Title</option>
+      </select>
+      <input type='text' name='animeName' id='animeInput' />
+      <input type='submit' value='Submit' id='button'>
     </form>
-    <!-- Top anime -->
+    <div id='searched-anime'>
+      <!-- anime search results here -->
+    </div>
+
+    <!-- Top Anime -->
     <div id='featuredAnime'>
       <!-- images go here -->
     </div>
-
     <!-- Anime Detail -->
     <div id = "anime-detail">
       <img class="anime-img"/>
@@ -34,13 +46,11 @@
           </video> -->
         <p></p>
       </h3>
-
     </div>
 
-    <div id='watchList'>
-      <!-- images go here -->
-    </div>
-
+    <!-- <div id='watchList'>
+      images go here
+    </div> -->
 
   </body>
 </html>

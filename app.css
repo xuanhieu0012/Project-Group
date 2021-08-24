@@ -9,7 +9,6 @@ body {
   }
 
 
-
 #featuredAnime{
   display: flex;
   overflow-x: auto;
@@ -23,6 +22,7 @@ body {
     margin-right: 0.5rem;
     
 }
+
 #featuredAnime img:last-child {
     margin-right: 0;
   }
