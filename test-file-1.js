@@ -44,7 +44,7 @@ function displayAnimeList(animeListArray){
             //show the description of anime
             const spanDetailA = document.querySelector("#anime-detail > h3.detail-anime > p > span")
 
-            spanDetailA.textContent = `Season: ${bestAnime['season_period']}---Total episodes: ${bestAnime['episodes_count']}`
+            spanDetailA.textContent = `Season: ${bestAnime['season_period']} ---Total episodes:${bestAnime['episodes_count']}`
           
 
             const animeDescription = document.querySelector("#anime-detail > h3.description > p")
@@ -61,25 +61,10 @@ function displayAnimeList(animeListArray){
   
 
 }
+// function detailsAnime(animeListArray, animeId){
+//     
+//     }
 
-
-// function paginated_fetch(
-//     url = animeListURL, // Improvised required argument in JS
-//     current_page = 1,
-//     previousResponse = []
-//   ) {
-//     return fetch(`${url}&current_page=${page}`) // Append the page number to the base URL
-//       .then(response => response.json())
-//       .then(newResponse => {
-//         const response = [...previousResponse, ...newResponse]; // Combine the two arrays
-  
-//         if (newResponse.length !== 0) {
-//           page++;
-  
-//           return paginated_fetch(url, page, response);
-//         }
-  
-//         return response;
-//       });
-//   }
-// paginated_fetch()
+    
+    
+// }
