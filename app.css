@@ -1,81 +1,97 @@
 body {
-    padding: 1rem;
-    text-align: center;
-    background-color: #fafafa;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+  padding: 1rem;
+  text-align: center;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 
 #featuredAnime{
-  display: flex;
-  overflow-x: auto;
-  margin: 1rem 0;
-  max-width: calc(100vw - 2rem)
+display: flex;
+overflow-x: auto;
+margin: 1rem 0;
+max-width: calc(100vw - 2rem)
 }
 
 #featuredAnime img{
-    flex: 0 1 auto;
-    height: 300px;
-    margin-right: 0.5rem;
-    
-}
-
-#featuredAnime img:last-child {
-    margin-right: 0;
-  }
- 
-.main{
-  width: 100%;
-  height: 20vh;
-  position: relative;
-  overflow: hidden;
-  background:linear-gradient(to right, cyan, #8ecdff);
-}
-nav{
-  width: 80%;
-  /* position: sticky; */
-  margin: 20px auto;
-  z-index: 1;
-  display: flex;
- 
-}
-.logo{
-  flex-basis: 20%;
-}
-.logo img{
-  position: absolute;
-  top: -40px;
-  left: 16px;
-  width: 200px;
-  height: 200x;
- 
-}
-.nav-links{
-  flex: 1;
-  text-align: right;
-}
-.nav-links ul li{
-  display: inline-block;
-  margin: 0 20px;
-}
-.nav-links ul li a{
-  color:rgb(255, 0, 0);
+  flex: 0 1 auto;
+  height: 300px;
+  margin-right: 0.5rem;
   
 }
 
+#featuredAnime img:last-child {
+  margin-right: 0;
+}
+
+.main{
+width: 100%;
+height: 20vh;
+position: relative;
+top: 0px;
+overflow: hidden;
+background:linear-gradient(to right, cyan, #8ecdff);
+}
+nav{
+width: 80%;
+/* position: sticky; */
+margin: 20px auto;
+z-index: 1;
+display: flex;
+
+}
+.logo{
+flex-basis: 20%;
+}
+.logo img{
+position: absolute;
+top: -40px;
+left: 16px;
+width: 200px;
+height: 200x;
+
+}
+.nav-links{
+position: absolute;
+right: 0px;
+top: 100px;
+flex: 1;
+text-align: right;
+}
+.nav-links ul li{
+display: inline-block;
+margin: 0 20px;
+
+}
+.nav-links ul li a{
+color:rgb(255, 0, 0);
+border: 3px white;
+border-radius: 5px;
+
+}
+
 #button:hover {
-  background-color: rgb(9, 232, 248);
+background-color: rgb(9, 232, 248);
 }
 a:hover {
-  background-color: yellow;
+background-color: yellow;
 }
 
 select:hover{
-  background-color:rgb(9, 232, 248);
+background-color:rgb(9, 232, 248);
 }
-.web-name{
-  font-size: 50px;
+.web-name h2{
+position: absolute;
+top: -70px;
+left: 450px;
+font-size: 70px;
+font-family: 'Rampart One',cursive;
+color: blue;
+
 }
+
+
+
