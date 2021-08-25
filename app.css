@@ -191,3 +191,46 @@ color: blue;
     color: rgb(241, 236, 236);
     background-color: red;
   }
+
+  /* CSS ADDED BY ROGER */
+  #searched-anime {
+    width: 40%;
+    float: left;
+    padding: 45px;
+    text-align: right;
+    height: 35%;
+    overflow: scroll;
+  }
+
+  img.searched-image {
+    float: left;
+  }
+  
+  p#search-description {
+    text-align: left;
+    float: left;
+    
+  }
+  
+  .decorate-container {
+    width: 40%;
+    height: 35%;
+    overflow: scroll;
+    /* float: left; */
+    padding: 45px;
+    border: 2px solid rgb(255, 0, 204);
+    color: ghostwhite;
+    border-radius: 25px;
+    background: #fc9f4dee;
+    box-shadow: 10px 10px 5px grey;
+  }
+
+.hidden {
+    display: none;
+  } 
+
+div.genre-div {
+  text-align: left;
+  width: fit-content;
+}
+

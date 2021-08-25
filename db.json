@@ -3,22 +3,48 @@
     {
       "id": 1,
       "anilist_id": "emty",
-      "banner_image": "emty",
       "cover_image": "emty",
       "descriptions": "emty",
-      "end_date": "emty",
       "episode_duration": "emty",
       "episodes_count": "emty",
-      "format": "emty",
       "genres": "emty",
-      "mal_id": "emty",
       "score": "emty",
-      "season_period": "emty",
-      "season_year": "emty",
-      "start_date": "emty",
-      "status": "emty",
-      "titles": "emty"
+      "titles": "emty",
+      "trailer_url": "emty"
+    },
+    {
+      "cover_image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx7-6uh1fPvbgS9t.png",
+      "anilist_id": 3,
+      "descriptions": "",
+      "episode_duration": 25,
+      "episodes_count": 26,
+      "score": 68,
+      "titles": "Witch Hunter Robin",
+      "genres": [
+        "Action",
+        "Drama",
+        "Mystery",
+        "Supernatural",
+        "Witch"
+      ],
+      "id": 5
+    },
+    {
+      "cover_image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1-CXtrrkMpJ8Zq.png",
+      "anilist_id": 1,
+      "descriptions": "",
+      "episode_duration": 24,
+      "episodes_count": 26,
+      "score": 86,
+      "titles": "Cowboy Bebop",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Drama",
+        "Sci-Fi",
+        "Space"
+      ],
+      "id": 6
     }
-  
   ]
 }
