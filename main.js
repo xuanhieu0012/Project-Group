@@ -18,7 +18,8 @@ function getAnimeList(){
 
 
 function displayAnimeList(animeListArray){
-    const featuredAnime = document.querySelector("#featuredAnime")
+    const featuredAnime = document.querySelector("#featuredAnime > div")
+    featuredAnime.id = "picture-wrapper"
     const topAnimeArr = []
 
     // this loop just get top 10 anime and return in topAnimeArr
@@ -61,8 +62,19 @@ function displayAnimeList(animeListArray){
   
 
 }
+function handlerArrow(){
+    let buttonLeft = document.querySelector("#slideLeft")
+    let buttonRight = document.querySelector("#slideRight")
+    buttonLeft.addEventListener('click', e => {
+        document.querySelector("#picture-wrapper").scrollLeft -= 180
+    })
 
+    buttonRight.addEventListener('click', e => {
+        document.querySelector("#picture-wrapper").scrollLeft += 180
+    })
+}
 
+handlerArrow()
 getAnimeList();
 
 
