@@ -104,15 +104,90 @@ color: blue;
 }
 
 
-.arrow{
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  transition: 0.3s;
- 
-}
-.arrow:hover{
-  opacity: .5;
-  width: 40px;
-  height: 40px;
-}
+
+
+.display-anime {
+  display: inline-block;
+  margin: 1rem 0;
+  max-width: fit-content;
+  max-height: 300px;
+  align-items:center;
+  
+  
+  }
+ #action-type {
+    width: fit-content;
+    display: block;
+    flex-wrap:wrap;
+    align-items: flex-start;
+    height: 300px;
+    
+    overflow: auto;
+  
+  }
+  #action-type img:hover{
+    height: 350px;
+    width: 250px;
+    cursor: pointer;
+  }
+
+  #comedy-type {
+    width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    height: 300px;
+    
+    overflow: auto;
+  
+  }
+  #comedy-type img:hover{
+    height: 350px;
+    width: 250px;
+    cursor: pointer;
+  }
+  #drama-type {
+    width: fit-content;
+    display: flex;
+    flex-wrap: nowrap;
+    
+    align-items:flex-start;
+    height: 300px;
+    
+    overflow-x: hidden;
+  
+  }
+  #drama-type img:hover{
+    height: 350px;
+    width: 250px;
+    cursor: pointer;
+  }
+  
+  .arrow{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    
+   
+  }
+  .arrow:hover{
+    opacity: .5;
+    width: 40px;
+    height: 40px;
+    
+  }
+  .like-bttn {
+    color: red;
+    font-size: larger;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+   
+    left: 40px
+  }
+  
+  .like-bttn:hover {
+    color: rgb(241, 236, 236);
+    background-color: red;
+  }

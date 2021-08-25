@@ -58,7 +58,7 @@ function displayAnimeList(animeListArray){
             
          })
     })
-    console.log(topAnimeArr)
+    //console.log(topAnimeArr)
   
 
 }

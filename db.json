@@ -1,0 +1,24 @@
+{
+  "favList": [
+    {
+      "id": 1,
+      "anilist_id": "emty",
+      "banner_image": "emty",
+      "cover_image": "emty",
+      "descriptions": "emty",
+      "end_date": "emty",
+      "episode_duration": "emty",
+      "episodes_count": "emty",
+      "format": "emty",
+      "genres": "emty",
+      "mal_id": "emty",
+      "score": "emty",
+      "season_period": "emty",
+      "season_year": "emty",
+      "start_date": "emty",
+      "status": "emty",
+      "titles": "emty"
+    }
+  
+  ]
+}
