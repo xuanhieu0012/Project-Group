@@ -1,5 +1,4 @@
 
-
 function getAnimeList(){
     fetch('https://api.aniapi.com/v1/anime',{
         headers: {
@@ -22,7 +21,7 @@ function displayAnimeHomePage(arrayAnime){
         
 
         arrayAnime.forEach(anime =>{
-            console.log(anime)
+            //console.log(anime)
             
             const genres = anime['genres']
             checkGenres(genres, anime, arrayAnime)
@@ -118,7 +117,8 @@ function handlerLikeList(aniID, arrayAnime){
             fetch('http://localhost:3000/favList',{
                 method: 'POST',
                 headers:{
-                    'Content-Type': 'appication/json'
+                    'Content-Type': 'application/json'
+                    
 
                 },
                 body: JSON.stringify(favListArr)

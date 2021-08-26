@@ -2,13 +2,14 @@ const BASEURL ='https://api.aniapi.com/v1/anime'
 
 // -------- MAIN SEARCH FUNCTION --------//
 function filterSearch() {
-
+    const divSearchBox = document.querySelector('#searched-anime');
+        divSearchBox.style.visibility = 'hidden'
     const formInput = document.querySelector('#animeSearch');
     const formDropDown = document.querySelector('#form-dropdown');
     formInput.addEventListener('submit', e => {
-
-        const animeInput = e.target.animeInput.value;
         e.preventDefault();
+        const animeInput = e.target.animeInput.value;
+        divSearchBox.style.visibility = 'visible'
 
         if(formDropDown.selectedIndex === 1){
             filterTitle(animeInput);
@@ -80,6 +81,9 @@ function filterGenre(input) {
 function titleRender(title, id) {
 
     const div = document.querySelector('#searched-anime');
+    
+        
+        
     const formInput = document.querySelector('#animeInput');
 
     const h3 = document.createElement('h3');
@@ -274,6 +278,7 @@ function addToWatchlist(id) {
     buttonContainer.appendChild(button);
     button.addEventListener('click', () => {
         removeAnime(anime, newId);
+        
         exisitingH2.textContent = '';
         existingH3.textContent = '';
         duration.textContent = '';

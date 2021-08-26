@@ -1,33 +1,62 @@
 {
   "favList": [
     {
-      "id": 1,
-      "anilist_id": "emty",
-      "cover_image": "emty",
-      "descriptions": "emty",
-      "episode_duration": "emty",
-      "episodes_count": "emty",
-      "genres": "emty",
-      "score": "emty",
-      "titles": "emty",
-      "trailer_url": "emty"
-    },
-    {
-      "cover_image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx7-6uh1fPvbgS9t.png",
-      "anilist_id": 3,
-      "descriptions": "",
-      "episode_duration": 25,
-      "episodes_count": 26,
-      "score": 68,
-      "titles": "Witch Hunter Robin",
+      "anilist_id": 124194,
+      "banner_image": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/124194-IB2X2IdALUYB.jpg",
+      "cover_image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx124194-r9MueM46SgLV.jpg",
+      "descriptions": {
+        "en": "",
+        "it": null
+      },
+      "end_date": "2021-06-29T00:00:00Z",
+      "episode_duration": 24,
+      "episodes_count": 13,
+      "format": 0,
       "genres": [
-        "Action",
+        "Comedy",
         "Drama",
-        "Mystery",
+        "Psychological",
+        "Romance",
+        "Slice of Life",
         "Supernatural",
-        "Witch"
+        "Shoujo",
+        "Tragedy",
+        "Rehabilitation",
+        "Coming of Age",
+        "Ensemble Cast",
+        "Female Protagonist",
+        "Family Life",
+        "Philosophy",
+        "Animals",
+        "Mythology",
+        "Gods",
+        "Heterosexual",
+        "Bullying",
+        "Shapeshifting",
+        "Revenge",
+        "School",
+        "Suicide",
+        "Reincarnation",
+        "Crossdressing",
+        "Tsundere",
+        "Age Gap",
+        "Incest",
+        "Kuudere",
+        "Time Skip",
+        "Bisexual"
       ],
-      "id": 5
+      "mal_id": 42938,
+      "score": 91,
+      "season_period": 1,
+      "season_year": 2021,
+      "start_date": "2021-04-06T00:00:00Z",
+      "status": 0,
+      "titles": {
+        "en": "Fruits Basket: The Final",
+        "jp": "フルーツバスケットThe Final",
+        "it": "Fruits Basket: The Final"
+      },
+      "id": 1
     },
     {
       "cover_image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1-CXtrrkMpJ8Zq.png",
@@ -44,25 +73,156 @@
         "Sci-Fi",
         "Space"
       ],
-      "id": 6
+      "id": 2
     },
     {
-      "cover_image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11061-sIpBprNRfzCe.png",
-      "anilist_id": 2025,
-      "descriptions": "A new adaption of the manga of the same name by Togashi Yoshihiro.<br><br>\nA Hunter is one who travels the world doing all sorts of dangerous tasks. From capturing criminals to searching deep within uncharted lands for any lost treasures. Gon is a young boy whose father disappeared long ago, being a Hunter. He believes if he could also follow his father's path, he could one day reunite with him.<br><br>\nAfter becoming 12, Gon leaves his home and takes on the task of entering the Hunter exam, notorious for its low success rate and high probability of death to become an official Hunter. He befriends the revenge-driven Kurapika, the doctor-to-be Leorio and the rebellious ex-assassin Killua in the exam, with their friendship prevailing throughout the many trials and threats they come upon taking on the dangerous career of a Hunter.",
+      "cover_image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx1575-ZJYlg8yjvMKI.jpg",
+      "anilist_id": 671,
+      "descriptions": "On August 10th of the year 2010 the Holy Empire of Britannia began a campaign of conquest, its sights set on Japan. Operations were completed in one month thanks to Britannia's deployment of new mobile humanoid armor vehicles dubbed Knightmare Frames. Japan's rights and identity were stripped away, the once proud nation now referred to as Area 11. Its citizens, Elevens, are forced to scratch out a living while the Britannian aristocracy lives comfortably within their settlements. Pockets of resistance appear throughout Area 11, working towards independence for Japan.<br><br>\n Lelouch, an exiled Imperial Prince of Britannia posing as a student, finds himself in the heart of the ongoing conflict for the island nation. Through a chance meeting with a mysterious girl named C.C., Lelouch gains his Geass, the power of the king. Now endowed with absolute dominance over any person, Lelouch may finally realize his goal of bringing down Britannia from within!<br><br>\n(Source: Bandai Entertainment)",
       "episode_duration": 24,
-      "episodes_count": 148,
-      "score": 90,
-      "titles": "Hunter x Hunter (2011)",
+      "episodes_count": 25,
+      "score": 84,
+      "titles": "Code Geass: Hangyaku no Lelouch",
       "genres": [
         "Action",
-        "Adventure",
-        "Fantasy",
-        "Shounen",
-        "Super Power"
+        "Drama",
+        "Mecha",
+        "Sci-Fi",
+        "Thriller"
       ],
-      "trailer_url": "https://www.youtube.com/embed/d6kBeJjTGnY",
-      "id": 7
+      "id": 3
+    },
+    {
+      "anilist_id": 114129,
+      "banner_image": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/114129-ZsLDkdwaYeJY.jpg",
+      "cover_image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx114129-TI4mHjFNI0E0.png",
+      "descriptions": {
+        "en": "Gintama The Final is the 3rd and final film adaptation of the remainder of the Silver Soul Arc"
+      },
+      "end_date": "2021-01-08T00:00:00Z",
+      "episode_duration": 104,
+      "episodes_count": 1,
+      "format": 2,
+      "genres": [
+        "Action",
+        "Comedy",
+        "Drama",
+        "Sci-Fi",
+        "Meta",
+        "Samurai",
+        "Shounen",
+        "Anachronism",
+        "Swordplay",
+        "Surreal Comedy",
+        "Parody",
+        "Male Protagonist",
+        "Tragedy",
+        "War",
+        "Aliens",
+        "Ninja",
+        "Gore",
+        "Kuudere",
+        "Robots"
+      ],
+      "mal_id": 39486,
+      "score": 92,
+      "season_period": 0,
+      "season_year": 2021,
+      "start_date": "2021-01-08T00:00:00Z",
+      "status": 0,
+      "titles": {
+        "en": "Gintama: THE FINAL",
+        "jp": "銀魂 THE FINAL"
+      },
+      "id": 4
+    },
+    {
+      "anilist_id": 114129,
+      "banner_image": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/114129-ZsLDkdwaYeJY.jpg",
+      "cover_image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx114129-TI4mHjFNI0E0.png",
+      "descriptions": {
+        "en": "Gintama The Final is the 3rd and final film adaptation of the remainder of the Silver Soul Arc"
+      },
+      "end_date": "2021-01-08T00:00:00Z",
+      "episode_duration": 104,
+      "episodes_count": 1,
+      "format": 2,
+      "genres": [
+        "Action",
+        "Comedy",
+        "Drama",
+        "Sci-Fi",
+        "Meta",
+        "Samurai",
+        "Shounen",
+        "Anachronism",
+        "Swordplay",
+        "Surreal Comedy",
+        "Parody",
+        "Male Protagonist",
+        "Tragedy",
+        "War",
+        "Aliens",
+        "Ninja",
+        "Gore",
+        "Kuudere",
+        "Robots"
+      ],
+      "mal_id": 39486,
+      "score": 92,
+      "season_period": 0,
+      "season_year": 2021,
+      "start_date": "2021-01-08T00:00:00Z",
+      "status": 0,
+      "titles": {
+        "en": "Gintama: THE FINAL",
+        "jp": "銀魂 THE FINAL"
+      },
+      "id": 5
+    },
+    {
+      "anilist_id": 114129,
+      "banner_image": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/114129-ZsLDkdwaYeJY.jpg",
+      "cover_image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx114129-TI4mHjFNI0E0.png",
+      "descriptions": {
+        "en": "Gintama The Final is the 3rd and final film adaptation of the remainder of the Silver Soul Arc"
+      },
+      "end_date": "2021-01-08T00:00:00Z",
+      "episode_duration": 104,
+      "episodes_count": 1,
+      "format": 2,
+      "genres": [
+        "Action",
+        "Comedy",
+        "Drama",
+        "Sci-Fi",
+        "Meta",
+        "Samurai",
+        "Shounen",
+        "Anachronism",
+        "Swordplay",
+        "Surreal Comedy",
+        "Parody",
+        "Male Protagonist",
+        "Tragedy",
+        "War",
+        "Aliens",
+        "Ninja",
+        "Gore",
+        "Kuudere",
+        "Robots"
+      ],
+      "mal_id": 39486,
+      "score": 92,
+      "season_period": 0,
+      "season_year": 2021,
+      "start_date": "2021-01-08T00:00:00Z",
+      "status": 0,
+      "titles": {
+        "en": "Gintama: THE FINAL",
+        "jp": "銀魂 THE FINAL"
+      },
+      "id": 6
     }
   ]
 }

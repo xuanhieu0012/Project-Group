@@ -177,17 +177,17 @@ color: blue;
     height: 40px;
     
   }
-  .like-bttn {
+  .addWatchList {
     color: red;
     font-size: larger;
     margin-right: 10px;
     margin-left: 10px;
     margin-bottom: 5px;
-   
-    left: 40px
+    position: center;
+    
   }
   
-  .like-bttn:hover {
+  .addWatchList:hover {
     color: rgb(241, 236, 236);
     background-color: red;
   }
