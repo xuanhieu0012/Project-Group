@@ -104,13 +104,11 @@ color: blue;
 }
 
 
-
-
 .display-anime {
   display: inline-block;
   margin: 1rem 0;
   max-width: fit-content;
-  max-height: 300px;
+  height: 600px;
   align-items:center;
   
   
@@ -120,7 +118,7 @@ color: blue;
     display: block;
     flex-wrap:wrap;
     align-items: flex-start;
-    height: 300px;
+    height: 400px;
     
     overflow: auto;
   
@@ -133,12 +131,12 @@ color: blue;
 
   #comedy-type {
     width: fit-content;
-    display: flex;
+    display: inline-block;
     flex-wrap: nowrap;
     align-items: flex-start;
-    height: 300px;
+    max-height: 355px;
     
-    overflow: auto;
+     overflow: hidden
   
   }
   #comedy-type img:hover{
@@ -152,9 +150,9 @@ color: blue;
     flex-wrap: nowrap;
     
     align-items:flex-start;
-    height: 300px;
+    max-height: 350;
     
-    overflow-x: hidden;
+    overflow: hidden;
   
   }
   #drama-type img:hover{
@@ -191,7 +189,6 @@ color: blue;
     color: rgb(241, 236, 236);
     background-color: red;
   }
-
   /* CSS ADDED BY ROGER */
   #searched-anime {
     width: 40%;

@@ -33,6 +33,8 @@ function displayAnimeList(animeListArray){
          createImgTag.src = bestAnime["cover_image"]
          createImgTag.id = animeListArray["anilist_id"]
          featuredAnime.appendChild(createImgTag)
+         const likeBttn = document.querySelector("#anime-detail > button")
+         likeBttn.style.visibility = 'hidden'
 
          createImgTag.addEventListener('click', e =>{
              // show up image 
@@ -52,8 +54,12 @@ function displayAnimeList(animeListArray){
             
 
             animeDescription.textContent =(bestAnime.descriptions.en).replaceAll('<br>',"").replaceAll("</br>", "").replaceAll('</i>',"").replaceAll('<i>',"")
-            // const videoTrailer = document.querySelector("#anime-detail > h4 > video")
-            // console.log(videoTrailer.src = bestAnime['trailer_url'])
+           
+            //like button
+            likeBttn.style.visibility = 'visible'
+            likeBttn.className = "like-bttn";
+            likeBttn.textContent = "♥";
+
             
             
          })
