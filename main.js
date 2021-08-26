@@ -82,13 +82,13 @@ function handlerBtnWatchList (topTenarray) {
 
     btn.addEventListener('click', e=>{
         const btnID = btn.id
-        let headers = document.querySelector("#watchList > h2")
-        headers.textContent ="My Favorite WatchList"
-        let img = document.querySelector("#anime-detail > img")
-        let imgDisplay = document.createElement('img')
-        let displayInWatchList =document.querySelector("#watchList > div")
-        imgDisplay.src = img.src
-        displayInWatchList.appendChild(imgDisplay)
+        // let headers = document.querySelector("#watchList > h2")
+        // headers.textContent ="My Favorite WatchList"
+        // let img = document.querySelector("#anime-detail > img")
+        // let imgDisplay = document.createElement('img')
+        // let displayInWatchList =document.querySelector("#watchList > div")
+        // imgDisplay.src = img.src
+        // displayInWatchList.appendChild(imgDisplay)
        
         
         handlerLikeList(btnID,topTenarray)
@@ -203,7 +203,7 @@ const dramaAnime = document.querySelector("#drama-type > div")
 
 
 function handlerLikeList(aniID, arrayAnime){
-console.log(arrayAnime)
+
 
 arrayAnime.forEach(eachAnime =>{
     // console.log(eachAnime["anilist_id"])
@@ -240,15 +240,15 @@ arrayAnime.forEach(eachAnime =>{
             body: JSON.stringify(favList)
 
         })
+        .then(res => res.json())
+        .then(anime => {console.log(anime)
+            displayWatchList(anime)
+        })
         
        
     }
 
 })
-
-
-
-
 
 
 }
@@ -270,17 +270,17 @@ function displayAnimeHomePage(arrayAnime){
 function handlerWatchList(){
     fetch(watchListURL)
     .then(res =>res.json())
-    .then (animeWatchList =>displayWatchList(animeWatchList))
+    .then (animeWatchList => animeWatchList.forEach(anime => displayWatchList(anime)))
 
 }
 
 
-function displayWatchList(animeWatchList){
+function displayWatchList(anime){
     
    
     
     
-    animeWatchList.forEach(anime =>{
+    // animeWatchList.forEach(anime =>{
         console.log(anime)
         //create image
         let imgTagWatchList = document.createElement('img')
@@ -291,7 +291,7 @@ function displayWatchList(animeWatchList){
             favoriteListDes( anime, animeID, imgTagWatchList)
 
         })
-    })
+    
 }
 
 function favoriteListDes( anime, animeID, e){
