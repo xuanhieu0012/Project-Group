@@ -81,7 +81,9 @@ function handlerBtnWatchList (topTenarray) {
     const btn = document.querySelector("#anime-detail > button")
 
     btn.addEventListener('click', e=>{
-        const btnID = btn.id
+         const btnID = btn.id
+       
+       
         handlerLikeList(btnID,topTenarray)
     }
 
@@ -120,43 +122,130 @@ function checkGenres(genres, anime, arrayAnime){
 const actionAnime = document.querySelector("#action-type > div")
 const comedyAnime = document.querySelector("#comedy-type > div")
 const dramaAnime = document.querySelector("#drama-type > div")
-const addWatchList = document.createElement("button");
 
-let imgTag = document.createElement('img')
-    addWatchList.className = "addWatchList";
-    addWatchList.textContent = "Add to Watchlist";
     
 
-genres.forEach(genresList =>{
+    genres.forEach(genresList =>{
     //handlerBtnWatchList(arrayAnime)
+
     if(genresList.toLowerCase() === "action"){
         
+        const addWatchList = document.createElement("button");
+        let imgTag = document.createElement('img')
+        addWatchList.className = "addWatchList";
+        addWatchList.textContent = "Add to Watchlist";
         imgTag.id = anime["anilist_id"]
         imgTag.src = anime["cover_image"]
+
         addWatchList.addEventListener('click', e =>{
            
         const aniID = imgTag.id
+        console.log(aniID)
         handlerLikeList(aniID, arrayAnime)})
         
         actionAnime.append(  imgTag, addWatchList)
-     }else if(genresList.toLowerCase() === "comedy"){
         
+     }else if(genresList.toLowerCase() === "comedy" ){
+        const addWatchList = document.createElement("button");
+        let imgTag = document.createElement('img')
+         addWatchList.className = "addWatchList";
+        addWatchList.textContent = "Add to Watchlist";
+        imgTag.id = anime["anilist_id"]
+
         imgTag.src = anime["cover_image"]
+
         addWatchList.addEventListener('click', e =>{
+            
         const aniID = imgTag.id
+        console.log(aniID)
         handlerLikeList(aniID, arrayAnime)})
+
         comedyAnime.append(imgTag, addWatchList)
-    }else if(genresList.toLowerCase() === "drama"){
         
+
+    }else if(genresList.toLowerCase() === "drama" ){
+        const addWatchList = document.createElement("button");
+        let imgTag = document.createElement('img')
+        addWatchList.className = "addWatchList";
+        addWatchList.textContent = "Add to Watchlist";
+
+        imgTag.id = anime["anilist_id"]
+
         imgTag.src = anime["cover_image"]
+
         addWatchList.addEventListener('click', e =>{
+            
         const aniID = imgTag.id
+
         handlerLikeList(aniID, arrayAnime)})
+
         dramaAnime.append(imgTag, addWatchList)
     }
    
 })}
 
+
+
+
+
+
+
+ 
+
+//handlerBtnWatchList()
+
+
+function handlerLikeList(aniID, arrayAnime){
+console.log(arrayAnime)
+
+arrayAnime.forEach(eachAnime =>{
+    // console.log(eachAnime["anilist_id"])
+    if (parseInt(aniID) === eachAnime["anilist_id"]){
+        
+        const favList = {
+            anilist_id:        eachAnime["anilist_id"]  ,
+            banner_image:      eachAnime["banner_image"],
+            cover_image:       eachAnime["cover_image"] ,
+            descriptions:      eachAnime["descriptions"].en,
+            end_date:          eachAnime["end_date"],
+            episode_duration:  eachAnime["episode_duration"],
+            episodes_count:    eachAnime["episodes_count"],
+            format:            eachAnime["format"],
+            genres:            eachAnime["genres"],
+            mal_id:            eachAnime["mal_id"],
+            score:             eachAnime["score"],
+            season_period:     eachAnime["season_period"],
+            season_year:       eachAnime["season_year"],
+            start_date:        eachAnime["start_date"] ,
+            status:            eachAnime["status"],
+            titles:            eachAnime["titles"].en,
+            trailer_url:       eachAnime["trailer_url"]
+        }
+        
+        
+        fetch('http://localhost:3000/favList',{
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'
+                
+
+            },
+            body: JSON.stringify(favList)
+
+        })
+        .then(res => res.json())
+        .then(animeWatchList => displayWatchList(animeWatchList))
+       
+    }
+
+})
+
+
+
+
+
+
+}
 
 
 function displayAnimeHomePage(arrayAnime){
@@ -173,89 +262,69 @@ function displayAnimeHomePage(arrayAnime){
 
 
 
- 
+function displayWatchList(anime){
 
-//handlerBtnWatchList()
-
-
-function handlerLikeList(aniID, arrayAnime){
-//console.log(aniID)
-
-arrayAnime.forEach(eachAnime =>{
-    // console.log(eachAnime["anilist_id"])
-    if (parseInt(aniID) === eachAnime["anilist_id"]){
-        
-        const favList = {
-            anilist_id:        eachAnime["anilist_id"]  ,
-            banner_image:      eachAnime["banner_image"],
-            cover_image:       eachAnime["cover_image"] ,
-            descriptions:      eachAnime["descriptions"],
-            end_date:          eachAnime["end_date"],
-            episode_duration:  eachAnime["episode_duration"],
-            episodes_count:    eachAnime["episodes_count"],
-            format:            eachAnime["format"],
-            genres:            eachAnime["genres"],
-            mal_id:            eachAnime["mal_id"],
-            score:             eachAnime["score"],
-            season_period:     eachAnime["season_period"],
-            season_year:       eachAnime["season_year"],
-            start_date:        eachAnime["start_date"] ,
-            status:            eachAnime["status"],
-            titles:            eachAnime["titles"],
-        }
-        
-        
-        fetch('http://localhost:3000/favList',{
-            method: 'POST',
-            headers:{
-                'Content-Type': 'application/json'
-                
-
-            },
-            body: JSON.stringify(favList)
-
-        })
-        .then(res =>res.json())
-    }
-
-})
-
-
-
-
-
-
-}
-
-
-
-
-
-function handlerWatchList(){
-    fetch(watchListURL)
-    .then(res =>res.json())
-    .then (animeWatchList =>displayWatchList(animeWatchList))
-
-}
-
-
-function displayWatchList(animeWatchList){
-    
-   
-    
-    const descriptionList = document.querySelector("#watchlist-container > p")
-    animeWatchList.forEach(anime =>{
         console.log(anime)
         //create image
         let imgTagWatchList = document.createElement('img')
         imgTagWatchList.src = anime['cover_image']
-        document.querySelector("#watchList").appendChild(imgTagWatchList)
+        document.querySelector("#watchList > div").appendChild(imgTagWatchList)
         imgTagWatchList.addEventListener('click', e =>{
+        const animeID = anime.id
+            console.log(animeID)
+    // paragraph description
+    const descriptionFav = document.querySelector("#watchlist-container > p")
+          descriptionFav.textContent = anime.descriptions.replaceAll('<br>',"").replaceAll("</br>", "").replaceAll('</i>',"").replaceAll('<i>',"")
+    //name anime
+    const animeName = document.querySelector("#watchlist-title")
+         animeName.textContent = anime.titles
+    // epsiode
+    const animeEpsiode = document.querySelector("#episodesWatchlist")
+          animeEpsiode.textContent = `Number of Episodes: ${anime["episodes_count"]}`
 
+    // duration watch
+    const animeDuration = document.querySelector("#durationWatchlist")
+          animeDuration.textContent = `Length of Episode(s): ${anime["episode_duration"]} minutes`
+    // rating
+    const animeRating = document.querySelector("#ratingWatchlist")
+          animeRating.textContent= `Rating: ${anime.score}/100`
+    // genres
+    const animeGenres = document.querySelector("#genresWatchlist")
+          animeGenres.textContent =`GENRES: ${anime.genres.join(', ')}`
+    //trailer link
+    const animeTrailer = document.querySelector('#watchlist-container a')
+    animeTrailer.classList = 'trailer-url';
+    animeTrailer.textContent = 'TRAILER';
+    animeTrailer.title = 'trailer';
+    animeTrailer.href = anime['trailer_url'];
+
+    const buttonContainer = document.querySelector('#watchlist-button-container');
+    buttonContainer.innerHTML = '';
+    const button = document.createElement('button');
+    button.textContent = 'Delete from Watchlist';
+    buttonContainer.appendChild(button);
+    button.addEventListener('click', () => {
+        removeAnimeFavList(animeID)
+        
+        descriptionFav.textContent = '';
+        animeName.textContent = '';
+        animeEpsiode.textContent = '';
+        animeDuration.textContent = '';
+        animeRating.textContent = '';
+        animeTrailer.textContent = '';
+        animeGenres.textContent = '';
+        buttonContainer.innerHTML = '';
+        imgTagWatchList.src='';
+    } );
+ 
         })
-    })
 }
+function removeAnimeFavList(animeID){
+    fetch(`http://localhost:3000/favList/${animeID}`, {
+        method: "DELETE"
+    })
 
+}
 
 
 
@@ -263,7 +332,7 @@ function displayWatchList(animeWatchList){
 function init(){
 handlerArrow()
 getAnimeList()
-handlerWatchList()
+
 
 }
 
