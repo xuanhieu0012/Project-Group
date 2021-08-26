@@ -243,17 +243,17 @@ function displayWatchList(animeWatchList){
     
    
     
-    // const descriptionList = document.querySelector("#watchlist-container > p")
-    // animeWatchList.forEach(anime =>{
-    //     console.log(anime)
-    //     //create image
-    //     let imgTagWatchList = document.createElement('img')
-    //     imgTagWatchList.src = anime['cover_image']
-    //     document.querySelector("#watchList").appendChild(imgTagWatchList)
-    //     imgTagWatchList.addEventListener('click', e =>{
+    const descriptionList = document.querySelector("#watchlist-container > p")
+    animeWatchList.forEach(anime =>{
+        console.log(anime)
+        //create image
+        let imgTagWatchList = document.createElement('img')
+        imgTagWatchList.src = anime['cover_image']
+        document.querySelector("#watchList").appendChild(imgTagWatchList)
+        imgTagWatchList.addEventListener('click', e =>{
 
-    //     })
-    // })
+        })
+    })
 }
 
 

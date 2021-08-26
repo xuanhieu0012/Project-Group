@@ -207,18 +207,26 @@ function addToWatchlist(id) {
         fetch(`${BASEURL}/${id}`)
         .then(resp => resp.json())
         .then(obj => {
-
+                console.log(obj)
             const genreArr = obj.data.genres;
             const newToWatchAnime = {
                 "cover_image": obj.data['cover_image'],
-                "anilist_id": obj.data.id,
+                "anilist_id": obj.data['anilist_id'],
                 "descriptions": obj.data.descriptions.en,
                 "episode_duration": obj.data['episode_duration'],
                 "episodes_count": obj.data["episodes_count"],
                 "score": obj.data.score,
                 "titles": obj.data.titles.en,
                 "genres": [genreArr[0], genreArr[1], genreArr[2], genreArr[3],  genreArr[4]],
-                "trailer_url": obj.data['trailer_url']
+                "trailer_url": obj.data['trailer_url'],
+                "banner_image": obj.data['banner_image'],
+                "end_date": obj.data['end_date'],
+                "format": obj.data.format,
+                "mal_id": obj.data['mal_id'],
+                "season_period": obj.data["season_period"],
+                "season_year": obj.data["season_year"],
+                "start_date": obj.data["start_date"],
+                "status": obj.data.status
             };
             
 
