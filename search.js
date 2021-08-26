@@ -176,8 +176,19 @@ function searchReset(heading) {
     const newTrailer = document.querySelector('#searched-container a');
     newTrailer.textContent = '';
 
-    const button = document.querySelector('#add-button');
-    button.classList = 'hidden';
+    const buttonContainer = document.querySelector('#button-container');
+    buttonContainer.innerHTML = '';
+
+    const episode = document.querySelector('#episodes');
+    episode.textContent = ''; 
+
+    const duration = document.querySelector('#duration');
+    duration.textContent = '';
+
+    const rating = document.querySelector('#rating');
+    rating.textContent = '';
+
+
 
 };
 
@@ -218,7 +229,7 @@ function addToWatchlist(id) {
             .then(object => {
                 const newId = object.id;
                 newCoverPhoto.src = obj.data['cover_image'];
-                newCoverPhoto.addEventListener('click', () => watchlistRenderDetails(newToWatchAnime, newId));
+                newCoverPhoto.addEventListener('click', () => watchlistRenderDetails(newToWatchAnime, newId, newCoverPhoto));
             })
 
             watchList.appendChild(newCoverPhoto);
@@ -228,7 +239,7 @@ function addToWatchlist(id) {
 
 };
 
- function watchlistRenderDetails (anime, newId) {
+ function watchlistRenderDetails (anime, newId, photo) {
     console.log(anime)
 
     const exisitingH2 = document.querySelector('#watchlist-title');
@@ -270,8 +281,8 @@ function addToWatchlist(id) {
         p.textContent = '';
         newTrailer.textContent = '';
         genreHeader.textContent = '';
-        // fetchWatchlist(newId);
-        //need to work on removing anime cover once deleted, refetch perhaps?
+        buttonContainer.innerHTML = '';
+        photo.src = '';
     } );
  }
 
@@ -289,6 +300,7 @@ function addToWatchlist(id) {
 //      .then(data => { data.forEach(piece => console.log(piece))
 //      })
 //  };
+
 //** need to write code for this to render separately than the other render functions bc of how I wrote the code lol ugh:/ */
 
 
