@@ -81,9 +81,16 @@ function handlerBtnWatchList (topTenarray) {
     const btn = document.querySelector("#anime-detail > button")
 
     btn.addEventListener('click', e=>{
-         const btnID = btn.id
+        const btnID = btn.id
+        let headers = document.querySelector("#watchList > h2")
+        headers.textContent ="My Favorite WatchList"
+        let img = document.querySelector("#anime-detail > img")
+        let imgDisplay = document.createElement('img')
+        let displayInWatchList =document.querySelector("#watchList > div")
+        imgDisplay.src = img.src
+        displayInWatchList.appendChild(imgDisplay)
        
-       
+        
         handlerLikeList(btnID,topTenarray)
     }
 
@@ -233,8 +240,7 @@ arrayAnime.forEach(eachAnime =>{
             body: JSON.stringify(favList)
 
         })
-        .then(res => res.json())
-        .then(animeWatchList => displayWatchList(animeWatchList))
+        
        
     }
 
@@ -261,17 +267,34 @@ function displayAnimeHomePage(arrayAnime){
  }
 
 
+function handlerWatchList(){
+    fetch(watchListURL)
+    .then(res =>res.json())
+    .then (animeWatchList =>displayWatchList(animeWatchList))
 
-function displayWatchList(anime){
+}
 
+
+function displayWatchList(animeWatchList){
+    
+   
+    
+    
+    animeWatchList.forEach(anime =>{
         console.log(anime)
         //create image
         let imgTagWatchList = document.createElement('img')
         imgTagWatchList.src = anime['cover_image']
         document.querySelector("#watchList > div").appendChild(imgTagWatchList)
         imgTagWatchList.addEventListener('click', e =>{
-        const animeID = anime.id
-            console.log(animeID)
+            const animeID = anime.id
+            favoriteListDes( anime, animeID, imgTagWatchList)
+
+        })
+    })
+}
+
+function favoriteListDes( anime, animeID, e){
     // paragraph description
     const descriptionFav = document.querySelector("#watchlist-container > p")
           descriptionFav.textContent = anime.descriptions.replaceAll('<br>',"").replaceAll("</br>", "").replaceAll('</i>',"").replaceAll('<i>',"")
@@ -314,10 +337,10 @@ function displayWatchList(anime){
         animeTrailer.textContent = '';
         animeGenres.textContent = '';
         buttonContainer.innerHTML = '';
-        imgTagWatchList.src='';
+        e.src='';
     } );
  
-        })
+
 }
 function removeAnimeFavList(animeID){
     fetch(`http://localhost:3000/favList/${animeID}`, {
@@ -332,7 +355,7 @@ function removeAnimeFavList(animeID){
 function init(){
 handlerArrow()
 getAnimeList()
-
+handlerWatchList()
 
 }
 
