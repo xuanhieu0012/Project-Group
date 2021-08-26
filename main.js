@@ -45,6 +45,9 @@ function displayAnimeList(animeListArray){
          createImgTag.addEventListener('click', e =>{
              // show up image 
 
+             const upperDiv = document.querySelector('#anime-detail');
+             upperDiv.classList.remove('hidden');
+
             const animeDetailImage = document.querySelector("#anime-detail > img")
             animeDetailImage.src = e.target.src
             //show the title of anime
@@ -276,7 +279,8 @@ function handlerWatchList(){
 
 
 function displayWatchList(anime){
-    
+   const title = document.querySelector('#watchlist h1');
+   title.textContent = 'My Watchlist' 
    
     
     
@@ -287,20 +291,38 @@ function displayWatchList(anime){
         imgTagWatchList.src = anime['cover_image']
         document.querySelector("#watchList > div").appendChild(imgTagWatchList)
         imgTagWatchList.addEventListener('click', e =>{
+            
             const animeID = anime.id
             favoriteListDes( anime, animeID, imgTagWatchList)
+            
 
         })
     
 }
 
 function favoriteListDes( anime, animeID, e){
+   const container = document.querySelector('#watchlist-container');
+   container.classList.remove('hidden');
+    
     // paragraph description
     const descriptionFav = document.querySelector("#watchlist-container > p")
-          descriptionFav.textContent = anime.descriptions.replaceAll('<br>',"").replaceAll("</br>", "").replaceAll('</i>',"").replaceAll('<i>',"")
+          if(anime.descriptions === ''){
+            descriptionFav.textContent = 'No description available at this time.';
+        } else if(typeof (anime.descriptions) === 'string') {
+            descriptionFav.textContent = (anime.descriptions).replaceAll('<br>',"").replaceAll("</br>", "").replaceAll('</i>',"").replaceAll('<i>',"");
+        } else  if(anime.descriptions.en === ''){
+            descriptionFav.textContent = 'No description available at this time.';
+        } else {
+            descriptionFav.textContent = anime.descriptions.en;
+        };
     //name anime
     const animeName = document.querySelector("#watchlist-title")
          animeName.textContent = anime.titles
+         if(typeof anime.titles === 'string') {
+            animeName.textContent = anime.titles;
+        } else {
+            animeName.textContent = anime.titles.en;
+        };
     // epsiode
     const animeEpsiode = document.querySelector("#episodesWatchlist")
           animeEpsiode.textContent = `Number of Episodes: ${anime["episodes_count"]}`
@@ -313,7 +335,13 @@ function favoriteListDes( anime, animeID, e){
           animeRating.textContent= `Rating: ${anime.score}/100`
     // genres
     const animeGenres = document.querySelector("#genresWatchlist")
-          animeGenres.textContent =`GENRES: ${anime.genres.join(', ')}`
+        //   animeGenres.textContent =`GENRES: ${anime.genres.join(', ')}`;
+          if(anime.genres.length < 6){
+            animeGenres.textContent = `GENRES: ${anime.genres.join(', ')}`;
+        } else {
+            const genreArr = anime.genres
+            animeGenres.textContent = `GENRES: ${(genreArr.slice(0, 4).join(', '))}`;}
+          console.log(anime)
     //trailer link
     const animeTrailer = document.querySelector('#watchlist-container a')
     animeTrailer.classList = 'trailer-url';

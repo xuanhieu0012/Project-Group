@@ -214,11 +214,13 @@ color: blue;
   
   .decorate-container {
     width: 40%;
+    font-family: Arial, Helvetica, sans-serif;
+
     height: 35%;
     overflow: scroll;
     /* float: left; */
     padding: 45px;
-    border: 2px solid rgb(255, 0, 204);
+    border: 2px solid #f95700fc;
     color: ghostwhite;
     border-radius: 25px;
     background: #fc9f4dee;
@@ -232,5 +234,103 @@ color: blue;
 div.genre-div {
   text-align: left;
   width: fit-content;
+  color: #f95700fc;
+}
+div.genre-div #genresWatchlist {
+  color: #f95700fc;
+
 }
 
+.watchlist-container img {
+  padding: 5px;
+} 
+
+ div.watchlist-container {
+  width: 95%;
+  overflow: auto;
+  white-space: nowrap;
+  margin: auto;
+  padding: 10px;
+}
+
+div#watchlist-container {
+  width: 50%;
+  margin: auto;
+  border: 2px solid #f95700fc;
+  border-radius: 25px;
+  box-shadow: 10px 10px 5px grey;
+  color: white;
+  background-color: #fc9f4dee;
+  height: 20%;
+  overflow: scroll;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: justify;
+  padding: 50px;
+}
+
+#watchlist h1 {
+  width: 50%;
+  margin: auto;
+}
+
+div#watchlist-container h3,
+#searched-container h3 {
+  color: #f95700fc;
+}
+
+#searched-container div.genre-div #genres
+ {
+  padding: 10px;
+}
+
+div#searched-anime h3:hover {
+  color:#f95700fc;
+  text-shadow: 0 0 3px #fc9f4dee;
+}
+
+div#searched-anime h3 {
+  color: #fc9f4dee;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+#button-container button,
+#watchlist-button-container button {
+  background-color: #fc9f4dee;
+  border: 2px solid #f95700fc;
+  border-radius: 7px;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#button-container button:hover,
+#watchlist-button-container button:hover {
+  background-color: #f95700fc;
+}
+
+
+
+#watchlist-container a,
+#searched-container a {
+  color: #f95700fc;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#watchlist-container a:hover,
+#searched-container a:hover {
+  color:#f95700fc;
+  text-shadow: 0 0 3px #f95700fc;
+}
+
+
+ header {
+  color: rgb(9, 136, 14);
+  text-shadow: 4px 4px 6px rgb(71, 206, 26);
+  font-family: 'Rampart One';
+
+}
+
+h1 {
+  color: white;
+  text-shadow: 4px 4px 6px black;
+  font-family: 'Rampart One';
+}

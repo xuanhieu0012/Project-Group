@@ -81,18 +81,14 @@ function filterGenre(input) {
 function titleRender(title, id) {
 
     const div = document.querySelector('#searched-anime');
-    
-        
-        
-    const formInput = document.querySelector('#animeInput');
-
     const h3 = document.createElement('h3');
     h3.textContent = title;
     div.appendChild(h3);
 
-    h3.addEventListener('click', () => titleDetailsRender(title, id));
+    const parent = document.querySelector('#search-parent');
+    parent.classList.remove('hidden');
 
-    formInput.addEventListener('click', () => searchReset(h3));
+    h3.addEventListener('click', () => titleDetailsRender(title, id));
     
 }; 
 
@@ -156,9 +152,10 @@ function titleDetailsRender(title, id) {
 
 };
 
-function searchReset(heading) {
+function searchReset() {
 
-    heading.textContent = '';
+    const div = document.querySelector('#searched-anime');
+    div.innerHTML = '';
 
     const divContainer = document.querySelector('#searched-container');
     divContainer.classList = '';
@@ -192,6 +189,15 @@ function searchReset(heading) {
     const rating = document.querySelector('#rating');
     rating.textContent = '';
 
+    const watchcontainer = document.querySelector('#watchlist-container');
+    watchcontainer.classList.add('hidden');
+
+    const parent = document.querySelector('#search-parent');
+    parent.classList.add('hidden');
+
+    const upperDiv = document.querySelector('#anime-detail');
+    upperDiv.classList = 'hidden'
+
 
 
 };
@@ -201,7 +207,7 @@ function searchReset(heading) {
 function addToWatchlist(id) {
 
         const newCoverPhoto = document.createElement('img');
-        const watchList = document.querySelector('#watchList');
+        const watchList = document.querySelector('.watchlist-container');
         const watchListHeader = document.querySelector('#watchList h2');
 
         fetch(`${BASEURL}/${id}`)
@@ -241,11 +247,15 @@ function addToWatchlist(id) {
             .then(object => {
                 const newId = object.id;
                 newCoverPhoto.src = obj.data['cover_image'];
-                newCoverPhoto.addEventListener('click', () => watchlistRenderDetails(newToWatchAnime, newId, newCoverPhoto));
+                newCoverPhoto.addEventListener('click', () => {
+                    
+                    watchlistRenderDetails(newToWatchAnime, newId, newCoverPhoto)});
             })
 
             watchList.appendChild(newCoverPhoto);
-            watchListHeader.textContent = 'My Watchlist'
+           
+            
+
         
         });
 
@@ -307,15 +317,10 @@ function addToWatchlist(id) {
 
  }
 
-//  function fetchWatchlist() {
-//      fetch(`http://localhost:3000/favList`)
-//      .then(resp => resp.json())
-//      .then(data => { data.forEach(piece => console.log(piece))
-//      })
-//  };
-
-//** need to write code for this to render separately than the other render functions bc of how I wrote the code lol ugh:/ */
 
 
 filterSearch();
-// fetchWatchlist()
+
+const formInput = document.querySelector('#animeInput');
+formInput.addEventListener('click', () => searchReset());
+
