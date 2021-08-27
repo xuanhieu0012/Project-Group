@@ -244,6 +244,9 @@ div.genre-div #genresWatchlist {
 .watchlist-container img {
   padding: 5px;
 } 
+.watchlist-container img:hover {
+  border: 2px solid rgb(9, 232, 248);
+} 
 
  div.watchlist-container {
   width: 95%;
@@ -334,3 +337,39 @@ h1 {
   text-shadow: 4px 4px 6px black;
   font-family: 'Rampart One';
 }
+
+
+#anime-detail {
+  width: 50%;
+  margin: auto;
+  font-family: Arial, Helvetica, sans-serif;
+  /* text-align: justify; */
+  background-color: rgb(9, 232, 248);
+  border: 2px solid blue;
+  border-radius: 25px;
+  box-shadow: 10px 10px 5px grey;
+  padding: 50px;
+  height: 45%;
+  overflow: scroll;
+  color: white;
+}
+
+#anime-detail button {
+  background-color: rgb(9, 232, 248);
+  border: 2px solid blue;
+  border-radius: 7px;
+  color: blue;
+  font-family: Arial, Helvetica, sans-serif;
+}
+#anime-detail button:hover {
+  background-color: blue;
+  color: white;
+}
+
+#anime-detail h3 {
+  color: blue;
+  font-style: normal;
+}
+
+#anime-detail h2 {
+  text-shadow: 2px 2px 4px #000000;}
