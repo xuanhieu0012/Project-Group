@@ -264,7 +264,7 @@ div#watchlist-container {
   box-shadow: 10px 10px 5px grey;
   color: white;
   background-color: #fc9f4dee;
-  height: 20%;
+  height: 35%;
   overflow: scroll;
   font-family: Arial, Helvetica, sans-serif;
   text-align: justify;
@@ -325,12 +325,7 @@ div#searched-anime h3 {
 }
 
 
- header {
-  color: rgb(9, 136, 14);
-  text-shadow: 4px 4px 6px rgb(71, 206, 26);
-  font-family: 'Rampart One';
 
-}
 
 h1 {
   color: white;
@@ -373,3 +368,12 @@ h1 {
 
 #anime-detail h2 {
   text-shadow: 2px 2px 4px #000000;}
+
+#watchlist-title-div {
+  width: 50%;
+  margin: auto;
+
+}
+/* 
+#searched-parent{
+} */

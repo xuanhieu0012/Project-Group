@@ -279,8 +279,8 @@ function handlerWatchList(){
 
 
 function displayWatchList(anime){
-   const title = document.querySelector('#watchlist h1');
-   title.textContent = 'My Watchlist' 
+//    const title = document.querySelector('#watchlist-container h1');
+//    title.textContent = 'My Watchlist' 
    
     
     
@@ -289,7 +289,7 @@ function displayWatchList(anime){
         //create image
         let imgTagWatchList = document.createElement('img')
         imgTagWatchList.src = anime['cover_image']
-        document.querySelector("#watchList > div").appendChild(imgTagWatchList)
+        document.querySelector("#watchList > div.watchlist-container").appendChild(imgTagWatchList)
         imgTagWatchList.addEventListener('click', e =>{
             
             const animeID = anime.id
@@ -366,6 +366,7 @@ function favoriteListDes( anime, animeID, e){
         animeGenres.textContent = '';
         buttonContainer.innerHTML = '';
         e.src='';
+        container.classList.add('hidden');
     } );
  
 
