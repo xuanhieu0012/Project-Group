@@ -78,49 +78,6 @@
       "id": 3
     },
     {
-      "anilist_id": 11061,
-      "banner_image": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/11061-8WkkTZ6duKpq.jpg",
-      "cover_image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx11061-sIpBprNRfzCe.png",
-      "descriptions": "A new adaption of the manga of the same name by Togashi Yoshihiro.<br><br>\nA Hunter is one who travels the world doing all sorts of dangerous tasks. From capturing criminals to searching deep within uncharted lands for any lost treasures. Gon is a young boy whose father disappeared long ago, being a Hunter. He believes if he could also follow his father's path, he could one day reunite with him.<br><br>\nAfter becoming 12, Gon leaves his home and takes on the task of entering the Hunter exam, notorious for its low success rate and high probability of death to become an official Hunter. He befriends the revenge-driven Kurapika, the doctor-to-be Leorio and the rebellious ex-assassin Killua in the exam, with their friendship prevailing throughout the many trials and threats they come upon taking on the dangerous career of a Hunter.",
-      "end_date": "2014-09-24T00:00:00Z",
-      "episode_duration": 24,
-      "episodes_count": 148,
-      "format": 0,
-      "genres": [
-        "Action",
-        "Adventure",
-        "Fantasy",
-        "Shounen",
-        "Super Power",
-        "Cultivation",
-        "Male Protagonist",
-        "Primarily Male Cast",
-        "Revenge",
-        "Philosophy",
-        "Ensemble Cast",
-        "Chimera",
-        "Martial Arts",
-        "Mafia",
-        "Crime",
-        "Gangs",
-        "Anti-Hero",
-        "Assassins",
-        "Card Battle",
-        "Gore",
-        "Gender Bending",
-        "LGBTQ+ Themes"
-      ],
-      "mal_id": 11061,
-      "score": 90,
-      "season_period": 3,
-      "season_year": 2011,
-      "start_date": "2011-10-02T00:00:00Z",
-      "status": 0,
-      "titles": "Hunter x Hunter (2011)",
-      "trailer_url": "https://www.youtube.com/embed/d6kBeJjTGnY",
-      "id": 4
-    },
-    {
       "anilist_id": 2921,
       "banner_image": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/2921-8cz7wULNyEgs.jpg",
       "cover_image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx2921-wxj62hpZVbuF.jpg",
@@ -306,6 +263,31 @@
       "titles": "Gintama: Kanketsu-hen - Yorozuya yo Eien Nare",
       "trailer_url": "https://www.youtube.com/embed/UhJM5rVqaF8",
       "id": 8
+    },
+    {
+      "cover_image": "https://s4.anilist.co/file/anilistcdn/media/anime/cover/medium/bx4181-V1LCtX1rJgbR.png",
+      "anilist_id": 4181,
+      "descriptions": "Events in After Story take place immediately after the first season, following Tomoya's final semester of high school. After declaring his love to Nagisa, they begin to have a close relationship. Their life together will be faced with unexpected challenges, as the truth behind the illusionary world and the city's legend come to light.",
+      "episode_duration": 24,
+      "episodes_count": 24,
+      "score": 87,
+      "titles": "Clannad: After Story",
+      "genres": [
+        "Drama",
+        "Romance",
+        "Slice of Life",
+        "Supernatural",
+        "Family Life"
+      ],
+      "banner_image": "https://s4.anilist.co/file/anilistcdn/media/anime/banner/4181.jpg",
+      "end_date": "2009-03-27T00:00:00Z",
+      "format": 0,
+      "mal_id": 4181,
+      "season_period": 3,
+      "season_year": 2008,
+      "start_date": "2008-10-03T00:00:00Z",
+      "status": 0,
+      "id": 9
     }
   ]
 }

@@ -208,7 +208,6 @@ function addToWatchlist(id) {
 
         const newCoverPhoto = document.createElement('img');
         const watchList = document.querySelector('.watchlist-container');
-        const watchListHeader = document.querySelector('#watchList h2');
 
         fetch(`${BASEURL}/${id}`)
         .then(resp => resp.json())
@@ -264,6 +263,9 @@ function addToWatchlist(id) {
  function watchlistRenderDetails (anime, newId, photo) {
     console.log(anime)
 
+    const container = document.querySelector('#watchlist-container');
+    container.classList.remove('hidden');
+
     const exisitingH2 = document.querySelector('#watchlist-title');
     exisitingH2.textContent = anime.titles;
 
@@ -310,7 +312,9 @@ function addToWatchlist(id) {
  }
 
  function removeAnime(anime, newId) {
-     console.log(anime)
+     const container = document.querySelector('#watchlist-container');
+     container.classList.add('hidden');
+     console.log(anime);
     fetch(`http://localhost:3000/favList/${newId}`, {
         method: "DELETE"
     })
